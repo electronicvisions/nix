@@ -81,6 +81,11 @@ if(DOXYGEN_FOUND)
         COMMENT "Generating API documentation with Doxygen" VERBATIM)
 endif(DOXYGEN_FOUND)
 
+########################################
+# MPI
+find_package (MPI REQUIRED)
+include_directories (${MPI_INCLUDE_DIR})
+set (LINK_LIBS ${LINK_LIBS} ${MPI_LIBRARIES})
 
 ########################################
 # NIX
